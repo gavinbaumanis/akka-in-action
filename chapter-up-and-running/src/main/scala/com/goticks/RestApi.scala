@@ -33,7 +33,7 @@ trait RestRoutes extends BoxOfficeApi
         get {
           // GET /events
           onSuccess(getEvents()) { events =>
-            complete(OK)
+            complete(OK, events)
           }
         }
       }
@@ -49,7 +49,7 @@ trait RestRoutes extends BoxOfficeApi
               case BoxOffice.EventCreated(event) => complete(Created, event) //<co id="ch02_complete_request_with_created"/>
               case BoxOffice.EventExists =>
                 val err = Error(s"$event event exists already.")
-                complete(BadRequest) //<co id="ch02_complete_request_with_bad_request"/>
+                complete(BadRequest, err) //<co id="ch02_complete_request_with_bad_request"/>
             }
           }
         } ~
