@@ -1,7 +1,7 @@
-scalaVersion := "2.11.7"
+scalaVersion := "2.13.1"
 
 scalacOptions ++= Seq(
-  "-target:jvm-1.7",
+  "-target:jvm-1.8",
   "-deprecation",
   "-unchecked",
   "-feature",
